@@ -1,5 +1,44 @@
-# Add patterns of files dvc should ignore, which could improve
-# the performance. Learn more at
-# https://dvc.org/doc/user-guide/dvcignore
-*.tmp
+# Python files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+*$py.class
+.pytest_cache/
 
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Raw data files
+*.csv
+*.xlsx
+*.xls
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Build files
+build/
+dist/
+*.egg-info
