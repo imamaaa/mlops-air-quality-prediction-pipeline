@@ -1,0 +1,11 @@
+name: aqi_prediction
+
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      config_path: {type: str, default: "config/config.yaml"}
+    command: "python train.py --config {config_path}"
+  default:
+    command: "python train.py --config config/config.yaml"

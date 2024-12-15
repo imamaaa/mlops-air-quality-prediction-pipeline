@@ -1,0 +1,37 @@
+# MLflow Configuration
+mlflow:
+  tracking_uri: "sqlite:///E:/Semester 8/MLOps/Project_Task_1/Task_2/mlruns/mlflow.db"
+  experiment_name: "aqi_prediction"
+  run_name_prefix: "aqi_prediction_run"
+
+# Data Configuration
+data:
+  weather_path: "E:/Semester 8/MLOps/Project_Task_1/data/weather"       # Path to weather data
+  pollution_path: "E:/Semester 8/MLOps/Project_Task_1/data/pollution"   # Path to pollution data
+  train_test_split: 0.8                      # Train/test split ratio
+
+# Model Parameters
+model_params:
+  arima:
+    order: [0, 1, 0]             # (p, d, q) for ARIMA
+    exog_columns:                # Exogenous variables (optional)
+      - temperature
+      - humidity
+      - wind_speed
+  
+  lstm:
+    sequence_length: 6  # Match the sequence length we're using
+    n_features: 4      # Number of features (aqi + 3 exog variables)
+    units: [32, 16]    # Smaller network for small dataset
+    dropout_rate: 0.1
+    learning_rate: 0.001
+    
+
+# Training Parameters
+training:
+  optimization_trials: 8          # Reduced trials since this is an initial check
+  metrics:                         # Metrics to track during training
+    - rmse
+    - mae
+    - r2
+    - accuracy

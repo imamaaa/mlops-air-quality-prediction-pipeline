@@ -1,0 +1,12 @@
+mlflow
+pandas
+numpy
+scikit-learn
+statsmodels
+tensorflow
+seaborn
+plotly
+nbformat
+ipykernel
+scipy
+optuna
