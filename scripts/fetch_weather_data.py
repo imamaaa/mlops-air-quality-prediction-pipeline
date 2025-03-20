@@ -1,5 +1,6 @@
 import requests
 import json
+from dotenv import load_dotenv
 from datetime import datetime
 import time
 import os
@@ -21,7 +22,10 @@ logging.basicConfig(
 )
 
 # Configuration
-API_KEY = "119e24626ffc881be87270bae2f7ba40"
+# Load environment variables
+load_dotenv()
+# Fetch API Key from environment variables
+API_KEY = os.getenv("API_KEY")
 CITY_CONFIG = {
     'name': 'Islamabad',
     'lat': 33.6844,
